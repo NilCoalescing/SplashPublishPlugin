@@ -1,4 +1,4 @@
-// swift-tools-version:5.6
+// swift-tools-version:5.9
 
 /**
 *  Splash plugin for Publish
@@ -10,7 +10,7 @@ import PackageDescription
 
 let package = Package(
     name: "SplashPublishPlugin",
-    platforms: [.macOS(.v12)],
+    platforms: [.macOS(.v14)],
     products: [
         .library(
             name: "SplashPublishPlugin",
@@ -24,7 +24,7 @@ let package = Package(
     targets: [
         .target(
             name: "SplashPublishPlugin",
-            dependencies: ["Splash", "Publish"]
+            dependencies: ["Splash", .product(name: "Publish", package: "Publish")]
         ),
         .testTarget(
             name: "SplashPublishPluginTests",
